@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Database;
+namespace Sirius\Auth\Contracts;
 
 interface ConnectionResolverInterface
 {
@@ -8,7 +8,7 @@ interface ConnectionResolverInterface
      * Get a database connection instance.
      *
      * @param  string  $name
-     * @return \Illuminate\Database\ConnectionInterface
+     * @return \Sirius\Auth\Contracts\ConnectionInterface
      */
     public function connection($name = null);
 

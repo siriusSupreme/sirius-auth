@@ -4,8 +4,8 @@ namespace Illuminate\Auth\Passwords;
 
 use Sirius\Support\Str;
 use Sirius\Support\Carbon;
-use Illuminate\Database\ConnectionInterface;
-use Illuminate\Contracts\Hashing\Hasher as HasherContract;
+use Sirius\Auth\Contracts\ConnectionInterface;
+use Sirius\Hash\Contracts\Hasher as HasherContract;
 use Sirius\Auth\Contracts\CanResetPassword as CanResetPasswordContract;
 
 class DatabaseTokenRepository implements TokenRepositoryInterface
@@ -13,14 +13,14 @@ class DatabaseTokenRepository implements TokenRepositoryInterface
     /**
      * The database connection instance.
      *
-     * @var \Illuminate\Database\ConnectionInterface
+     * @var \Sirius\Auth\Contracts\ConnectionInterface
      */
     protected $connection;
 
     /**
      * The Hasher implementation.
      *
-     * @var \Illuminate\Contracts\Hashing\Hasher
+     * @var \Sirius\Hash\Contracts\Hasher
      */
     protected $hasher;
 
@@ -48,8 +48,8 @@ class DatabaseTokenRepository implements TokenRepositoryInterface
     /**
      * Create a new token repository instance.
      *
-     * @param  \Illuminate\Database\ConnectionInterface  $connection
-     * @param  \Illuminate\Contracts\Hashing\Hasher  $hasher
+     * @param  \Sirius\Auth\Contracts\ConnectionInterface  $connection
+     * @param  \Sirius\Hash\Contracts\Hasher  $hasher
      * @param  string  $table
      * @param  string  $hashKey
      * @param  int  $expires
@@ -175,7 +175,7 @@ class DatabaseTokenRepository implements TokenRepositoryInterface
     /**
      * Get the database connection instance.
      *
-     * @return \Illuminate\Database\ConnectionInterface
+     * @return \Sirius\Auth\Contracts\ConnectionInterface
      */
     public function getConnection()
     {
@@ -195,7 +195,7 @@ class DatabaseTokenRepository implements TokenRepositoryInterface
     /**
      * Get the hasher instance.
      *
-     * @return \Illuminate\Contracts\Hashing\Hasher
+     * @return \Sirius\Hash\Contracts\Hasher
      */
     public function getHasher()
     {

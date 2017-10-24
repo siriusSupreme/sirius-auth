@@ -4,7 +4,7 @@ namespace Illuminate\Auth;
 
 use Sirius\Support\Str;
 use Sirius\Auth\Contracts\UserProvider;
-use Illuminate\Contracts\Hashing\Hasher as HasherContract;
+use Sirius\Hash\Contracts\Hasher as HasherContract;
 use Sirius\Auth\Contracts\Authenticatable as UserContract;
 
 class EloquentUserProvider implements UserProvider
@@ -12,7 +12,7 @@ class EloquentUserProvider implements UserProvider
     /**
      * The hasher implementation.
      *
-     * @var \Illuminate\Contracts\Hashing\Hasher
+     * @var \Sirius\Hash\Contracts\Hasher
      */
     protected $hasher;
 
@@ -26,7 +26,7 @@ class EloquentUserProvider implements UserProvider
     /**
      * Create a new database user provider.
      *
-     * @param  \Illuminate\Contracts\Hashing\Hasher  $hasher
+     * @param  \Sirius\Hash\Contracts\Hasher  $hasher
      * @param  string  $model
      * @return void
      */
@@ -148,7 +148,7 @@ class EloquentUserProvider implements UserProvider
     /**
      * Gets the hasher implementation.
      *
-     * @return \Illuminate\Contracts\Hashing\Hasher
+     * @return \Sirius\Hash\Contracts\Hasher
      */
     public function getHasher()
     {
@@ -158,7 +158,7 @@ class EloquentUserProvider implements UserProvider
     /**
      * Sets the hasher implementation.
      *
-     * @param  \Illuminate\Contracts\Hashing\Hasher  $hasher
+     * @param  \Sirius\Hash\Contracts\Hasher  $hasher
      * @return $this
      */
     public function setHasher(HasherContract $hasher)

@@ -3,8 +3,8 @@
 namespace Illuminate\Auth;
 
 use RuntimeException;
+use Sirius\Macro\Traits\Macroable;
 use Sirius\Support\Str;
-use Sirius\Support\Traits\Macroable;
 use Illuminate\Contracts\Session\Session;
 use Sirius\Auth\Contracts\UserProvider;
 use Illuminate\Contracts\Events\Dispatcher;

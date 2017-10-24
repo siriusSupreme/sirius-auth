@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Auth\Access;
+namespace Sirius\Auth\Access;
 
 trait HandlesAuthorization
 {
@@ -8,7 +8,7 @@ trait HandlesAuthorization
      * Create a new access response.
      *
      * @param  string|null  $message
-     * @return \Illuminate\Auth\Access\Response
+     * @return \Sirius\Auth\Access\Response
      */
     protected function allow($message = null)
     {
@@ -19,9 +19,9 @@ trait HandlesAuthorization
      * Throws an unauthorized exception.
      *
      * @param  string  $message
-     * @return void
+     * @return null
      *
-     * @throws \Illuminate\Auth\Access\AuthorizationException
+     * @throws \Sirius\Auth\Access\AuthorizationException
      */
     protected function deny($message = 'This action is unauthorized.')
     {

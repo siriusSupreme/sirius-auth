@@ -87,9 +87,9 @@ interface Gate
      *
      * @param  string  $ability
      * @param  array|mixed  $arguments
-     * @return \Illuminate\Auth\Access\Response
+     * @return \Sirius\Auth\Access\Response
      *
-     * @throws \Illuminate\Auth\Access\AuthorizationException
+     * @throws \Sirius\Auth\Access\AuthorizationException
      */
     public function authorize($ability, $arguments = []);
 

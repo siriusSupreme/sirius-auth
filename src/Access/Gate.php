@@ -1,8 +1,9 @@
 <?php
 
-namespace Illuminate\Auth\Access;
+namespace Sirius\Auth\Access;
 
 use Sirius\Support\Arr;
+use function Sirius\Support\collect;
 use Sirius\Support\Str;
 use InvalidArgumentException;
 use Sirius\Container\Contracts\Container;
@@ -63,7 +64,7 @@ class Gate implements GateContract
      * @param  array  $policies
      * @param  array  $beforeCallbacks
      * @param  array  $afterCallbacks
-     * @return void
+     *
      */
     public function __construct(Container $container, callable $userResolver, array $abilities = [],
                                 array $policies = [], array $beforeCallbacks = [], array $afterCallbacks = [])
@@ -257,9 +258,9 @@ class Gate implements GateContract
      *
      * @param  string  $ability
      * @param  array|mixed  $arguments
-     * @return \Illuminate\Auth\Access\Response
+     * @return \Sirius\Auth\Access\Response
      *
-     * @throws \Illuminate\Auth\Access\AuthorizationException
+     * @throws \Sirius\Auth\Access\AuthorizationException|null
      */
     public function authorize($ability, $arguments = [])
     {
@@ -340,6 +341,8 @@ class Gate implements GateContract
                 return $result;
             }
         }
+
+        return null;
     }
 
     /**
@@ -398,7 +401,7 @@ class Gate implements GateContract
         }
 
         if (! is_string($class)) {
-            return;
+            return null;
         }
 
         if (isset($this->policies[$class])) {
@@ -410,6 +413,8 @@ class Gate implements GateContract
                 return $this->resolvePolicy($policy);
             }
         }
+
+        return null;
     }
 
     /**
@@ -482,6 +487,8 @@ class Gate implements GateContract
         if (method_exists($policy, 'before')) {
             return $policy->before($user, $ability, ...$arguments);
         }
+
+        return null;
     }
 
     /**

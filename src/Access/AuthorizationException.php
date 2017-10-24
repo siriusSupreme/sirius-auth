@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Auth\Access;
+namespace Sirius\Auth\Access;
 
 use Exception;
 

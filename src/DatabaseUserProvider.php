@@ -4,8 +4,8 @@ namespace Illuminate\Auth;
 
 use Sirius\Support\Str;
 use Sirius\Auth\Contracts\UserProvider;
-use Illuminate\Database\ConnectionInterface;
-use Illuminate\Contracts\Hashing\Hasher as HasherContract;
+use Sirius\Auth\Contracts\ConnectionInterface;
+use Sirius\Hash\Contracts\Hasher as HasherContract;
 use Sirius\Auth\Contracts\Authenticatable as UserContract;
 
 class DatabaseUserProvider implements UserProvider
@@ -13,14 +13,14 @@ class DatabaseUserProvider implements UserProvider
     /**
      * The active database connection.
      *
-     * @var \Illuminate\Database\ConnectionInterface
+     * @var \Sirius\Auth\Contracts\ConnectionInterface
      */
     protected $conn;
 
     /**
      * The hasher implementation.
      *
-     * @var \Illuminate\Contracts\Hashing\Hasher
+     * @var \Sirius\Hash\Contracts\Hasher
      */
     protected $hasher;
 
@@ -34,8 +34,8 @@ class DatabaseUserProvider implements UserProvider
     /**
      * Create a new database user provider.
      *
-     * @param  \Illuminate\Database\ConnectionInterface  $conn
-     * @param  \Illuminate\Contracts\Hashing\Hasher  $hasher
+     * @param  \Sirius\Auth\Contracts\ConnectionInterface  $conn
+     * @param  \Sirius\Hash\Contracts\Hasher  $hasher
      * @param  string  $table
      * @return void
      */
