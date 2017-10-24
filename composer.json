@@ -18,6 +18,7 @@
   "require": {
     "php": ">=7.0.0",
     "siriussupreme/sirius-container": "^1.0",
+    "siriussupreme/sirius-hash": "^1.0",
     "siriussupreme/sirius-support": "^1.0"
   },
   "require-dev": {
