@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Foundation\Auth;
+namespace Sirius\Auth\Traits;
 
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Foundation\Auth;
+namespace Sirius\Auth\Traits;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;

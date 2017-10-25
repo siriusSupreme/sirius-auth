@@ -1,8 +1,9 @@
 <?php
 
-namespace Illuminate\Foundation\Auth\Access;
+namespace Sirius\Auth\Traits\Access;
 
-use Illuminate\Contracts\Auth\Access\Gate;
+use Sirius\Auth\Access\Gate;
+use Sirius\Container\Container;
 
 trait Authorizable
 {
@@ -15,7 +16,7 @@ trait Authorizable
      */
     public function can($ability, $arguments = [])
     {
-        return app(Gate::class)->forUser($this)->check($ability, $arguments);
+        return Container::getInstance()->make(Gate::class)->forUser($this)->check($ability, $arguments);
     }
 
     /**

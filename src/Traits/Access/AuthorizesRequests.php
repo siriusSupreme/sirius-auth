@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Foundation\Auth\Access;
+namespace Sirius\Auth\Traits\Access;
 
 use Illuminate\Support\Str;
 use Illuminate\Contracts\Auth\Access\Gate;
